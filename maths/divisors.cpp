@@ -1,5 +1,5 @@
-vector<ll> calcDivs(ll n) {
-    vector<ll> divs;
+vll calcDivs(ll n) {
+    vll divs;
     for (ll i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             divs.pb(i);

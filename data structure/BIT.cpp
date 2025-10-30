@@ -1,11 +1,11 @@
-class FenwickTree{
+class BIT{
 private:
  
     ll n;
-    vector<ll> tree;
+    vll tree;
  
     ll lsb(ll idx){
-        return (idx & (-idx));
+        return (idx & -idx);
     }
  
     ll sum(ll idx){
@@ -19,13 +19,12 @@ private:
  
 public:
  
-    FenwickTree(vector<ll> &v){
+    BIT(vll &v){
         n = v.size();
         tree.assign(n + 1, 0);       
         for(ll i = 1; i <= n; i++){
             update(i, v[i - 1]); 
         }
- 
     }
  
     void update(ll idx, ll val){
@@ -36,9 +35,8 @@ public:
     }
  
     ll query(ll l, ll r){
-        ll rangeSum = sum(r) - sum(l-1);
+        ll rangeSum = sum(r) - sum(l - 1);
         return rangeSum;
- 
     }
  
 };
