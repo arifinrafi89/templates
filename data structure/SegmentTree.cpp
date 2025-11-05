@@ -68,6 +68,4 @@ public:
 	ll query(ll l, ll r) {
 		return query(0, 0, n - 1, l, r);
 	}
-
-
 };

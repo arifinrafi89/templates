@@ -1,24 +1,21 @@
-void dijkstra(ll start, mpll &adj, vll &dist) {
+void dijkstra(ll idx, ll n, mpll &adj, vll &d) {
     
+    vector<bool> visited(n + 1, false);
     priority_queue<pll, vpll, greater<pll>> pq;
-
-    dist[start] = 0;
-    pq.push({0, start});
-    
-    while(!pq.empty()) {
-        pll curr = pq.top();
+    pq.push({0, idx});
+    d[idx] = 0;
+    while (!pq.empty()) {
+        pll node = pq.top();
         pq.pop();
-        if (curr.first > dist[curr.second]) continue;
-
-        for (pll node : adj[curr.second]) {
-            if (dist[node.second] > curr.first +  node.first) {
-                dist[node.second] = curr.first +  node.first;
-                pq.push({dist[node.second], node.second});
+        if (visited[node.second]) continue;
+        visited[node.second] = true;
+        for (pll child : adj[node.second]) {
+            if (visited[child.second] == true) continue;
+            ll newDist = child.first + node.first;
+            if (newDist < d[child.second]) {
+                pq.push({newDist, child.second});
+                d[child.second] = newDist;
             }
         }
-            
     }
-
-    return;
-
 }

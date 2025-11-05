@@ -24,7 +24,6 @@ bool topoSort(mll &adj) {
                 visited++;
             }
         }
-
     }
 
     if (visited == n) return false;

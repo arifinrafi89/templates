@@ -1,5 +1,4 @@
 struct TrieNode {
-
     vector<TrieNode*> next;
     ll prefixCount;
     bool end;
@@ -20,7 +19,6 @@ struct TrieNode {
 
 class Trie {
 private:
-
     TrieNode* root;
     string prefixString;
     void print(TrieNode* cur, string &prefixString) {
@@ -34,7 +32,6 @@ private:
                 prefixString.pop_back();
             }
         }         
-
     }
 
 public:
@@ -84,7 +81,4 @@ public:
     void print() {
         print(root, prefixString);
     }
-
-    
-
 };
