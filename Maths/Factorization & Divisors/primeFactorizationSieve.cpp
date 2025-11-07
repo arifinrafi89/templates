@@ -1,8 +1,8 @@
 class PrimeFactorization {
 private:
     ll n;
-    vll spf;      
-    vll primes;   
+    vector<ll> spf;      
+    vector<ll> primes;   
 
     void build() {
         spf[0] = 0;
@@ -25,8 +25,8 @@ public:
         build();
     }
 
-    vpll getFactorization(ll x) {
-        vpll res;
+    vector<pll> getFactorization(ll x) {
+        vector<pll> res;
         if (x <= 1) return res;
         while (x > 1) {
             ll p = spf[x];

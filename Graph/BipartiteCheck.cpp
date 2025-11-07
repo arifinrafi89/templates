@@ -1,4 +1,4 @@
-bool bipartiteCheck(ll n, mll &adj, vll &colour) {
+bool bipartiteCheck(ll n, vector<vector<ll>> &adj, vector<ll> &colour) {
     
     colour.assign(n + 1, 0);
     for (ll i = 1; i <= n; i++) {

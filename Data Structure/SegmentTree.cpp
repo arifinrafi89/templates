@@ -1,7 +1,5 @@
-class segmentTree {
-
+class SegmentTree {
 private:
-
 	ll n;
 	vector<ll> tree;
 
@@ -55,7 +53,7 @@ private:
 
 public:
 
-	segmentTree(vector<ll> &v) {
+	SegmentTree(vector<ll> &v) {
 		n = v.size();
 		tree.resize(4 * n);
 		build (0, 0, n - 1, v);

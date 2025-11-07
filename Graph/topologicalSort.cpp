@@ -1,4 +1,4 @@
-bool topoSort(mll &adj) {
+bool topoSort(vector<vector<ll>> &adj) {
     ll n = adj.size();
     vector<ll> inDegree(n, 0);
     for (ll i = 0; i < n; i++) {

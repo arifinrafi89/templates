@@ -1,6 +1,6 @@
-ll mst (ll s, mll &adj, vector<bool> &visited) {
+ll MST (ll s, vector<vector<ll>> &adj, vector<bool> &visited) {
 
-    priority_queue<pll, vpll>, greater<pll>> pq;
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
     ll sum = 0;
     pq.push({0, s});
     while (!pq.empty()) {

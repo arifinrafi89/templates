@@ -1,6 +1,6 @@
-void dijkstra(ll start, mpll &adj, vll &dist) {
+void dijkstra(ll start, vector<vector<pll>> &adj, vector<ll> &dist) {
     
-    priority_queue<pll, vpll, greater<pll>> pq;
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
     dist[start] = 0;
     pq.push({0, start});
     while(!pq.empty()) {

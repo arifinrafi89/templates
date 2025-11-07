@@ -2,7 +2,7 @@ class BIT{
 private:
  
     ll n;
-    vll tree;
+    vector<ll> tree;
  
     ll lsb(ll idx){
         return (idx & -idx);
@@ -19,7 +19,7 @@ private:
  
 public:
  
-    BIT(vll &v){
+    BIT(vector<ll> &v){
         n = v.size();
         tree.assign(n + 1, 0);       
         for(ll i = 1; i <= n; i++){

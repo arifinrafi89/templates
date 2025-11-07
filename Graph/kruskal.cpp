@@ -1,9 +1,9 @@
-ll find(ll u, vll &par) {
+ll find(ll u, vector<ll> &par) {
     if (u == par[u]) return u;
     return par[u] = find(par[u], par);
 }
 
-void add(ll u, ll v, vll &par, vll &size) {
+void add(ll u, ll v, vector<ll> &par, vector<ll> &size) {
     u = find(u, par);
     v = find(v, par);
     if (u == v) return;
@@ -17,9 +17,9 @@ void add(ll u, ll v, vll &par, vll &size) {
     }
 }
 
-ll kruskalDsu(ll n, ll m, mll &edges) {
+ll kruskalDsu(ll n, ll m, vector<vector<ll>> &edges) {
 
-    vll size(n + 1, 1), par(n + 1);
+    vector<ll> size(n + 1, 1), par(n + 1);
     vpll mst;
     ll cost = 0;
     for (ll i = 1; i <= n; i++) {

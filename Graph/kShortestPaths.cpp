@@ -1,6 +1,6 @@
-vll shpa(ll n, ll k, mpll &adj) {
+vll shpa(ll n, ll k, vector<vector<pll>> &adj) {
  
-    priority_queue<pll, vpll, greater<pll>> pq;
+    priority_queue<pll, vector<pll>, greater<pll>> pq;
     priority_queue<ll> d[n + 1];
     pq.push({0, 1});
     d[1].push(0);

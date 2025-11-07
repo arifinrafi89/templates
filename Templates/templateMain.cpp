@@ -7,11 +7,6 @@ using namespace __gnu_pbds;
  
 #define ll long long
 #define pll pair<ll, ll>
-#define vll vector<ll>
-#define vpll vector<pll>
-#define mll vector<vll>
-#define mpll vector<vpll>
-#define pb push_back
 #define yes cout << "YES" << '\n'
 #define no cout << "NO" << '\n'
 #define all(x) x.begin(), x.end()

@@ -1,5 +1,5 @@
-vpll factorize(ll n) {
-    vpll f;
+vector<pll> factorize(ll n) {
+    vector<pll> f;
     if (n <= 1) return f;
     ll ct = 0;
     while ((n & 1LL) == 0) {
@@ -15,7 +15,7 @@ vpll factorize(ll n) {
                 n /= i;
                 ct++;
             }
-            f.push_back({i, c});
+            f.push_back({i, ct});
         }
     }
     if (n > 1) f.push_back({n, 1});

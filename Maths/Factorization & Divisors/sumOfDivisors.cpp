@@ -17,12 +17,12 @@ ll modInv(ll n, ll M) {
     return binExp(n, M - 2, M);
 }
 
-ll sumOfDiviors(vpll &f, ll M) {
+ll sumOfDivisors(vector<pll> &f, ll M) {
     ll res = 1;
     for (auto [p, e] : f) {
         ll num = (binExp(p, e + 1, M) - 1 + M) % M;
         ll den = (p - 1 + M) % M;
-        ll cur = num * mod_inv(den, M) % M;
+        ll cur = num * modInv(den, M) % M;
         res = res * cur % M;
     }
     return res;

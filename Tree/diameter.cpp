@@ -1,4 +1,4 @@
-void dfsDepth(ll node, ll par, mll &adj, vll &depth) {
+void dfsDepth(ll node, ll par, vector<vector<ll>> &adj, vector<ll> &depth) {
     for (ll child : adj[node]) {
         if (par == child) continue;
         depth[child] = depth[node] + 1;
@@ -7,7 +7,7 @@ void dfsDepth(ll node, ll par, mll &adj, vll &depth) {
     return;
 }
 
-ll dfsHeight(ll node, ll par, mll &adj) {
+ll dfsHeight(ll node, ll par, vector<vector<ll>> &adj) {
     ll h = 0;
     for (ll child : adj[node]) {
         if (par == child) continue;
@@ -17,8 +17,8 @@ ll dfsHeight(ll node, ll par, mll &adj) {
 }
 
 
-ll diameter(ll n, mll &adj) {
-    vll depth(n + 1, 0);
+ll diameter(ll n, vector<vector<ll>> &adj) {
+    vector<ll> depth(n + 1, 0);
     dfsDepth(1, 0, adj, depth);
     ll node = -1;
     ll maxDepth = -1;

@@ -1,7 +1,7 @@
 class DSU {
 private:
-    vll par;
-    vll sz;
+    vector<ll> par;
+    vector<ll> sz;
 
     void build(ll n) {
         par.resize(n + 1);

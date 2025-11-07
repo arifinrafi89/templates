@@ -1,10 +1,10 @@
-class segmentTree {
+class SegmentTreeLazy {
 
 private:
     ll n;
-    vll tree, lazy;
+    vector<ll> tree, lazy;
 
-    void build(ll node, ll start, ll end, vll &v) {
+    void build(ll node, ll start, ll end, vector<ll> &v) {
         if (start == end) {
             tree[node] = v[start];
         } else {
@@ -49,8 +49,8 @@ private:
     }
 
 public:
-    segmentTree(vector<ll> &v) {
-        n = (ll)v.size();
+    SegmentTreeLazy(vector<ll> &v) {
+        n = v.size();
         tree.assign(4 * n, 0);
         lazy.assign(4 * n, 0);
         build(0, 0, n - 1, v);

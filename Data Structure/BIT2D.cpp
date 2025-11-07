@@ -1,7 +1,7 @@
 class  BIT2D {
 private:
     ll n, m;
-    mll tree;
+    vector<vector<ll>> tree;
 
     ll lsb(ll idx) {
         return idx & -idx;
@@ -16,10 +16,10 @@ private:
     }
 
 public:
-    BIT2D(mll &mat) {
+    BIT2D(vector<vector<ll>> &mat) {
         n = mat.size();
         m = mat[0].size();
-        tree.assign(n + 1, vll(m + 1, 0));
+        tree.assign(n + 1, vector<ll> (m + 1, 0));
         for (ll i = 1; i 
             <= n; i++)
             for (ll j = 1; j <= m; j++)

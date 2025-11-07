@@ -22,7 +22,7 @@ ll nCr(ll n, ll r, ll M) {
 	ll res = 1;
 	for (ll i = 1; i <= r; i++) {
 		res = (res * (n - r + i)) % M;
-		res = res * modInv(i, mod);
+		res = res * modInv(i, M);
 		res %= M;
 	}
 	return res;

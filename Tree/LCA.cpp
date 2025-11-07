@@ -2,10 +2,10 @@ class LCA {
 private:
     ll n;
     ll K;
-    mll anc;
-    vll level;
+    vector<vector<ll>> anc;
+    vector<ll> level;
 
-    void dfs(ll u, ll par, mll &adj) {
+    void dfs(ll u, ll par, vector<vector<ll>> &adj) {
         anc[u][0] = par;
         level[u] = level[par] + 1;
         for (ll k = 1; k < K; k++) 
@@ -17,10 +17,10 @@ private:
     }
 
 public:
-    LCA(ll root, ll _n, mll &adj) {
+    LCA(ll root, ll _n, vector<vector<ll>> &adj) {
         n = _n;
         K = 64 - __builtin_clzll(n + 1);
-        anc.assign(n + 1, vll(K, 0));
+        anc.assign(n + 1, vector<ll>(K, 0));
         level.assign(n + 1, 0);
         level[0] = -1;        
         dfs(root, 0, adj);    

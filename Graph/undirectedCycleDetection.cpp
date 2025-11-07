@@ -1,14 +1,14 @@
-vll cycle;
+vector<ll> cycle;
 
-bool dfs(ll node, mll &adj, vector<bool> &visited, vector<bool> &anc, vll &cycle) {
+bool dfs(ll node, vector<vector<ll>> &adj, vector<bool> &visited, vector<bool> &anc, vector<ll> &cycle) {
     if (anc[node]) {
-        cycle.pb(node);
+        cycle.push_back(node);
         return true;
     }
     if (visited[node]) return false;
     visited[node] = true;
     anc[node] = true;
-    cycle.pb(node);
+    cycle.push_back(node);
     for (ll child : adj[node]) {
         if (dfs(child, adj, visited, anc, cycle)) return true;
     }
@@ -17,7 +17,7 @@ bool dfs(ll node, mll &adj, vector<bool> &visited, vector<bool> &anc, vll &cycle
     return false;
 }
 
-bool cycleDetection(ll n, mll &adj) {
+bool cycleDetection(ll n, vector<vector<ll>> &adj) {
     vector<bool> visited(n + 1, false), anc(n + 1, false);
     bool possible = false;
     for (ll i = 1; i <= n; i++) {
